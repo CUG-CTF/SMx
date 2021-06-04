@@ -5,7 +5,7 @@ sm3_hash_ctx *sm3_hash_init()
 {
     EVP_MD_CTX *ctx = EVP_MD_CTX_new();
     EVP_DigestInit(ctx, EVP_sm3());
-    return (sm3_hash_ctx *)ctx;
+    return ctx;
 }
 void sm3_hash_update(sm3_hash_ctx *ctx, const byte *data, const size_t len)
 {
