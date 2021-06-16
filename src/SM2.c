@@ -23,7 +23,6 @@ void sm2_generate_keypair(char *private_key, char *public_key)
 sm2_pkey *sm2_get_private_key(const char *private_key)
 {
     EC_KEY *key = EC_KEY_new_by_curve_name(NID_sm2);
-    const EC_GROUP *group = EC_KEY_get0_group(key);
 
     BIGNUM *pri_key = NULL;
     BN_hex2bn(&pri_key, private_key);
